@@ -1,15 +1,6 @@
-/*!
- * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
- * Copyright 2013-2017 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
- */
-
 body {
   padding-top: 54px;
-}
-
-body, html, .container {
-  height: 100%;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #map {
