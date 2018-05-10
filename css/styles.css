@@ -8,6 +8,21 @@ body {
   padding-top: 54px;
 }
 
+body, html, .container {
+  height: 100%;
+}
+
+#map {
+  width: 100%; height: 400px; margin-top: 40px; margin-bottom: 40px;
+}
+
+.info-window {
+  font-family: 'Montserrat', sans-serif;
+}
+.info-content {
+  color: #999;
+}
+
 @media (min-width: 992px) {
   body {
     padding-top: 56px;

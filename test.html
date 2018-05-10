@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 400px;
+        width: 75%;
+        margin: 0 auto;
+       }
+       h1 {
+           text-align: center;
+       }
+    </style>
+  </head>
+  <body>
+    <h1>Berkeley Map</h1>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var berkeley = {lat: 37.8715926, lng: -122.272747};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          center: berkeley
+        });
+        var marker = new google.maps.Marker({
+          position: berkeley,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_AfrYQz44BdWqNjg_Ej72ktR6oiyvmzI&callback=initMap">
+    </script>
+  </body>
+</html>

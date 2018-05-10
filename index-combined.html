@@ -7,17 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- Bootstrap core CSS -->
-   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-   <!-- Bootstrap core JavaScript -->
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
-    <!-- Custom styles for this template -->
-    <link href="css/styles.css" rel="stylesheet">
     <title>HistoriCal</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+   <style>
+   body {
+  padding-top: 54px;
+    }
+
+    body, html, .container {
+    height: 100%;
+    }
+    
+   </style>
+
   </head>
 
   <body>
@@ -96,13 +102,27 @@
       <!-- /.container -->
     </footer>
 
- 
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Javascript -->
-    <script src="js/googlemaps.js"></script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_AfrYQz44BdWqNjg_Ej72ktR6oiyvmzI&callback=initMap">
-    </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script>
+            function initMap() {
+              var berkeley = {lat: 37.8715926, lng: -122.272747};
+              var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 14,
+                center: berkeley
+              });
+              var marker = new google.maps.Marker({
+                position: berkeley,
+                map: map
+              });
+            }
+          </script>
+          <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_AfrYQz44BdWqNjg_Ej72ktR6oiyvmzI&callback=initMap">
+          </script>
+
   </body>
 
 </html>
