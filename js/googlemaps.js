@@ -54,12 +54,12 @@ $(function () {
 
   function initMap() {
 
-      var location = new google.maps.LatLng(37.8715926, -122.272747);
+      var location = new google.maps.LatLng(37.872036, -122.271258);
 
       var mapCanvas = document.getElementById('map');
       var mapOptions = {
           center: location,
-          zoom: 16,
+          zoom: 14,
           panControl: false,
           scrollwheel: false,
           mapTypeId: google.maps.MapTypeId.ROADMAP
