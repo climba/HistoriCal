@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+        <head>
+      
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+          <meta name="description" content="">
+          <meta name="author" content="">
+      
+          <title>HistoriCal</title>
+      
+          <!-- Bootstrap core CSS -->
+          <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+      
+         <style>
+              body {
+                  padding-top: 54px;
+              }
+              body, 
+              html, 
+                  .container {
+                  height: 100%;
+              }
+             #map {
+              height: 400px;
+              width: 75%;
+              margin: 0 auto;
+             }
+         </style>
+      
+      </head>
+      
+      <body>
+        
+
+    <div id="map"></div>
+
+      
+       
+<script type="text/javascript">
+      
+      var locations = [
+        ["berkeleyCenter", 37.8715926, -122.272747, "Berkeley Center", "text"],
+        ["founderRock", 37.875333, -122.256882, "Founder Rock", "text2" ],
+        ["greekTheater", 37.873561, -122.254422, "Greek Theater", "text3" ],
+        ["slatherGate", 37.869502, -122.259326, "Slather Gate", "text3" ]
+    ];
+
+function initMap() {
+    
+    var mapCanvas = new google.maps.Map(document.getElementById('map'), {
+            zoom: 14,
+            panControl: false,
+            scrollwheel: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            center: {lat: locations[0][1], lng: locations[0][2]}
+        });          
+            
+        for (var i = 0; i < locations.length; i++) {  
+            var markerImage = 'marker.png';
+            var contentString = locations[i][3] + "<br />" + locations[i][4];
+            var infowindow = new google.maps.InfoWindow({content: contentString, maxWidth: 400});
+            var marker = new google.maps.Marker({
+                position: {lat: locations[i][1], lng: locations[i][2]},
+                icon: markerImage,
+                map: mapCanvas,
+                text: infowindow,
+                 // test: listen
+            });
+            
+            (function(infowindow2, marker2) {
+                marker2.addListener('click', function () {
+                infowindow2.open(mapCanvas, marker2);
+                });
+            })(infowindow, marker);
+            
+           
+        }
+        
+    }
+
+
+
+            
+</script>
+      <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB97vgMk_7vX9wf26nUA1kV1jwTm_lnIho&callback=initMap">
+      </script>
+      
+      
+       
+          <!-- Bootstrap core JavaScript -->
+          <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+          <!-- <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+          
+      
+      </body>
+      
+      </html>
+      
