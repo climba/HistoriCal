@@ -4,7 +4,7 @@
 
 $(function () {
 
-    var locations = [
+var locations = [
         ["berkeleyCenter", 37.8715926, -122.272747, "<strong>Berkeley Center</strong>", "Established: 1868"],
         ["founderRock", 37.875333, -122.256882, "<strong>Founder Rock</strong>", "Established: 1860" ],
         ["greekTheater", 37.873561, -122.254422, "<strong>Greek Theater</strong>", "Built: 1903" ],
