@@ -7,7 +7,7 @@
          <!-- Bootstrap core CSS -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
         <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-        <link href='css/styles.css' rel='stylesheet' type='text/css'>
+        <link href='assets/css/styles.css' rel='stylesheet' type='text/css'>
     </head>
     <body>
 
@@ -84,8 +84,12 @@
 
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_AfrYQz44BdWqNjg_Ej72ktR6oiyvmzI&callback=initMap"></script>
+        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_AfrYQz44BdWqNjg_Ej72ktR6oiyvmzI&callback=initMap"></script> -->
+        <!-- In the line above the end of the URL "&callback=initMap" throws an error -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_AfrYQz44BdWqNjg_Ej72ktR6oiyvmzI"></script>
         
-        <script src="js/googlemaps.js"></script>
+        <!-- <script src="js/googlemaps.js"></script> -->
+        <!-- The above file works but doesn't inclued the click function -->
+        <script src="assets/js/maps.js"></script>
     </body>
 </html>

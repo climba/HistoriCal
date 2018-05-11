@@ -22,7 +22,7 @@ $(function () {
             });          
                 
             for (var i = 0; i < locations.length; i++) {  
-                var markerImage = 'marker.png';
+                var markerImage = 'assets/images/marker.png';
                 var contentString = locations[i][3] + "<br />" + locations[i][4];
                 var infowindow = new google.maps.InfoWindow({content: contentString, maxWidth: 400});
                 var marker = new google.maps.Marker({
