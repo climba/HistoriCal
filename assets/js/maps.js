@@ -261,6 +261,10 @@ $(function () {
         }
     ];
 
+    $.getJSON("test.json", function(json) {
+        console.log(json); // this will show the info it in firebug console
+    });   
+
     function initMap() {
         
         var mapCanvas = new google.maps.Map(document.getElementById('map'), {
@@ -272,7 +276,7 @@ $(function () {
             });          
                 
             for (var i = 0; i < locations.length; i++) {  
-                var markerImage = 'assets/images/marker.png';
+                var markerImage = 'assets/images/marker_sm.png';
                 var contentString = locations[i].title + "<br />" + locations[i].est;
                 var infowindow = new google.maps.InfoWindow({content: contentString, maxWidth: 400});
                 var marker = new google.maps.Marker({
