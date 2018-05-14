@@ -204,7 +204,7 @@ var locations = [
         est: "1854",
         photos_sm: ['<img src="https://bit.ly/2rDWpLR" height="60px" height="60px">', '<img src="https://bit.ly/2Ke2w11" height="60px">'],
         photos_lg: ['<img src="https://bit.ly/2rDWpLR">', '<img src="https://bit.ly/2Ke2w11">'],
-        text:"Regardless of errors in attribution and dating, this building is an important reminder of the early days of Berkeley. Captain Higgins’ Temperance Grocery Store is one of the oldest buildings remaining in Berkeley. On 17 June 1985, it was designated a City of Berkeley Landmark under the name Captain Bowen’s Inn. 
+        text:"Regardless of errors in attribution and dating, this building is an important reminder of the early days of Berkeley. Captain Higgins’ Temperance Grocery Store is one of the oldest buildings remaining in Berkeley. On 17 June 1985, it was designated a City of Berkeley Landmark under the name Captain Bowen’s Inn." 
         
         },{
         name: "heywood",
@@ -362,7 +362,7 @@ for (var i=0; i< locations.length; i++) {
 
     var div = 
     '<div class="card" style=" height: 13rem;">' + 
-        '<img class="card-img-top" height="200px" ' + locations[i]photos[0] + 
+        '<img class="card-img-top"' + locations[i]["photos_lg"][0] + 
     '</div>';
     var img = "<img " + locations[i]["photos_lg"][0] + "/>";
  

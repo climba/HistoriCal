@@ -30,7 +30,7 @@ var locations = [
     lat: 37.873561,
     long: -122.254422,
     title: "<strong>Greek Theater</strong>",
-    est: "Built: 1903",
+    est: "Established: 1903",
     photos: ["https://bit.ly/2IuYlRk", "https://bit.ly/2IdKNpW"],
     text: "Built in 1903 on the site of a rough outdoor bowl already in use as an amphitheater since 1894. The project was championed by University of CA president Benjamin Ide Wheeler. The design of the theater is based directly on the ancient Greek theater of Epidaurus."
     
@@ -39,7 +39,7 @@ var locations = [
     lat: 37.869502,
     long: -122.259326,
     title: "<strong>Sather Gate</strong>",
-    est: "Built: 1903",
+    est: "Established: 1903",
     photos: ["https://bit.ly/2rBX3Ky", "https://bit.ly/2IbDbsc"],
     text:"Designed by John Galen Howard in the Classical Revival Beaux-Arts style, it was completed in 1910. Atop the gate are eight panels of bas-relief figures: four nude men representing the disciplines of law, letters, medicine, and mining, and four nude women representing the disciplines of agriculture, architecture, art, and electricity."        
     },
@@ -311,7 +311,7 @@ var locations = [
     long: -122.299885,
     title: "<strong>Shellmound</strong>",
     photos: ["https://bit.ly/2KeAR00", "https://bit.ly/2rD3E7y"],
-    text:"The Berkeley Shellmound is the earliest inhabited location in the Bay Area. Archaeologists have recovered large numbers of tools and ornaments from the mound, and 95 human burials. Most of the artifacts are stored in the catacombs of U.C. The above-ground part shellmound was leveled and paved over. But much of the below-ground part remains intact today, extending up to twenty feet down in some parts, under parking lots, streets, railroad tracks, and buildings."
+    text:"The Berkeley Shellmound is the earliest inhabited location in the Bay Area. Archaeologists have recovered large numbers of tools and ornaments from the mound, and 95 human burials. The above-ground part shellmound was leveled and paved over. But much of the below-ground part remains intact today, extending up to twenty feet down in some parts, under parking lots, streets, railroad tracks, and buildings."
     
     },{
     name: "incin",
@@ -330,8 +330,8 @@ for (var i=0; i< locations.length; i++) {
 // generates an picture from the olden times
 
     var bw = 
-    '<div class="card" style=" height: 18rem;">' + 
-        '<img class="card-img-top"" style=" height: 18rem;" src="' + locations[i].photos[0] + 
+    '<div class="card" style=" height: 14.4rem;">' + 
+        '<img class="card-img-top"" style=" height: 14.4rem;" src="' + locations[i].photos[0] + 
         '"</div>';
  
     $("#landmark").append(bw);
@@ -339,8 +339,8 @@ for (var i=0; i< locations.length; i++) {
 // generate a picture from modern times
 
     var color = 
-    '<div class="card " style=" height: 18rem;">' + 
-        '<img class="card-img-top" " style=" height: 17rem;" src="' + locations[i].photos[1] + 
+    '<div class="card " style=" height: 14.4rem;">' + 
+        '<img class="card-img-top" " style=" height: 14.4rem;" src="' + locations[i].photos[1] + 
     '"</div>';
  
     $("#landmark2").append(color);
@@ -348,11 +348,28 @@ for (var i=0; i< locations.length; i++) {
 // generates a card with the name of the location, the date is was established, and some info text about that location.
 
     var div3 = 
-    '<div class="card " style=" height: 18rem;">' + 
+    '<div class="card " style=" height: 14.4rem;">' + 
         '<div class="card-body">' + '<h5 class="card-title">'+ locations[i]["title"]+ '</h5>' + '<p class="card-text">' + locations[i]["est"] + '</p>' +
-        '<p class="card-text">' + locations[i]["text"] + '</p>' +
+        '<p class="card-text" style= "font-size: 13px">' + locations[i]["text"] + '</p>' +
         '</div>' +
     '</div>';
  
     $("#info").append(div3);
  }
+
+ document.getElementById( "home" ).onclick = function() {
+    location.href = "index.html";
+};
+
+document.getElementById( "landmarks" ).onclick = function() {
+    location.href = "landmarks.html";
+};
+document.getElementById( "browse" ).onclick = function() {
+    location.href = "browse-by-map.html";
+};
+document.getElementById( "tour" ).onclick = function() {
+    location.href = "index.html";
+};
+document.getElementById( "contact" ).onclick = function() {
+    location.href = "index.html";
+};
