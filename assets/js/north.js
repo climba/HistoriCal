@@ -198,4 +198,20 @@
     }    
 
     initMapN();
-
+    
+    document.getElementById( "home" ).onclick = function() {
+        location.href = "index.html";
+    };
+    
+    document.getElementById( "landmarks" ).onclick = function() {
+        location.href = "landmarks.html";
+    };
+    document.getElementById( "browse" ).onclick = function() {
+        location.href = "browse-by-map.html";
+    };
+    document.getElementById( "tour" ).onclick = function() {
+        location.href = "index.html";
+    };
+    document.getElementById( "contact" ).onclick = function() {
+        location.href = "index.html";
+    };
