@@ -15,36 +15,42 @@
     <!--Start Navigation -->
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <div class="container">
-              <a class="navbar-brand" href="index.html">HistoriCal</a>
-              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="landmarks.html">Landmarks</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="browse-by-map.html">Browse by Map</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Create a tour
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                      <a class="dropdown-item" href="walking-tour.html">Walking Tour</a>
-                      <a class="dropdown-item" href="bicycle-tour.html">Bicycle Tour</a>
-                      <a class="dropdown-item" href="driving-tour.html">Driving Tour</a>
-                    </div>
-                  </li>
-                </ul>
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Histori<span style="color: #FDB515" >CAL</span></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="landmarks.html"><span style="color: #FDB515" >Landmarks</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span style="color: #FDB515" >Browse by map</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                <a class="dropdown-item" href="browse-by-map-2.html">Northside Berkeley</a>
+                <a class="dropdown-item" href="browse-by-map.html">West Berkeley</a>
               </div>
-            </div>
-          </nav>
+            </li>
+            <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span style="color: #FDB515" >Create a tour</span>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                    <a class="dropdown-item" href="walking-tour.html">Walking Tour</a>
+                    <a class="dropdown-item" href="bicycle-tour.html">Bicycle Tour</a>
+                    <a class="dropdown-item" href="driving-tour.html">Driving Tour</a>
+                  </div>
+                </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html"><span style="color: #FDB515" >Contact</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
           <!--End Navigation -->
       
           <div class="container">
@@ -53,22 +59,31 @@
       <!--Start Page Content -->
             <!-- Top Panel -->
             <div class="row">
-                <div class="col-lg-12">
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <h1 class="panel-title">Welcome to HistoriCal</h1>
+              <div class="col-lg-12">
+                <div class="card panel-default">
+                  <div class="card-heading">
+                    <h1 class="card-title" >Welcome to Histori<span style="color: #003262" >Cal</span></h1>
+                  </div>
+                  <h3 style="color: #FDB515">Berkeley Landmarks</h3>
+                  <div class="row" style="margin-top: 60px">
+                    <div class="col-md-3">
+                      <div class="panel-body" id="landmark" >
+                        <div class="text-left">
+                      </div>
+                      </div>
                     </div>
-                    <h3>Berkeley Map</h3>
-                    <div id="map"></div>
-                    <div class="panel-body">
-                      <div class="text-left">
-      
+                    <div class="col-md-3">
+                        <div class="panel-body" id="landmark2">
+                        </div>
                       </div>
-                      </div>
+                    <div class="col-md-6">
+                        <div class="panel-body" id="info">
+                        </div>
+                    </div>
                     </div>
                   </div>
                 </div>
-        
+              </div>
               <!-- End Top Panel -->
       <!--End Page Content -->
       
@@ -95,6 +110,6 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_AfrYQz44BdWqNjg_Ej72ktR6oiyvmzI"></script>
 
-      <script src="assets/js/maps.js"></script>
+      <script src="assets/js/locations2.js"></script>
   </body>
 </html>
