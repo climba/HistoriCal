@@ -362,7 +362,7 @@ for (var i=0; i< locations.length; i++) {
 
     var div = 
     '<div class="card" style=" height: 13rem;">' + 
-        '<img class="card-img-top"' + locations[i]["photos_lg"][0] + 
+        '<img class="card-img-top" height="200px" ' + locations[i]photos[0] + 
     '</div>';
     var img = "<img " + locations[i]["photos_lg"][0] + "/>";
  
