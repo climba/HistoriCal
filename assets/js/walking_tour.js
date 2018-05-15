@@ -88,9 +88,9 @@ var locations = [
     text: "Built in 1896, it attracted much attention. In the Sunset magazine article Berkeley, the Beautiful (December 1906), writer Herman Whitaker described Weltevreden as “most beautiful of all” and the “premier residence of Berkeley.”" 
     },{
     name: "bentley",
-    lat: 37.8776261, 
-    long: -122.257434,
-    title: "",
+    lat: 37.877626, 
+    long: -122.257435,
+    title: "Bentley House",
     est: "Established: 1900",
     photos: ["https://bit.ly/2G8gFuh", "https://bit.ly/2IdKyv2"],
     text: "Built in 1900. Despite its simplicity, the house possesses several strong design features, including an overhanging gambrel roof open to extended eaves; a prominent front porch with a shed roof supported by open brackets; a three-sided window bay above the front porch; and numerous windows on all sides, often arranged in groups of three."
