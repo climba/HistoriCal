@@ -7,7 +7,6 @@
 var locations = [
     // Berkeley Center
     {
-
     name: "SpringerGateway",
     lat: 37.871754,
     long: -122.265188,
@@ -15,7 +14,6 @@ var locations = [
     est: "Established: 1964",
     photos: ["assets/images/springer2.jpg", "assets/images/springer3.jpg"]
     },{
-
     name: "BerkeleyCenter",
     lat: 37.8715926,
     long: -122.272747,
@@ -333,20 +331,22 @@ var locations = [
     }
 ];
 
-
+  
 
  
  
 var mapCanvas, infoWindow;
-<<<<<<< HEAD
-=======
 
 var userLat, userLng;
 var userLoc = {
     lat: userLat,
     lng: userLng
 }
->>>>>>> f5c44f69afcf2aba43f91a2f0d7a82b934488fdc
+
+
+
+
+
 
 
 
@@ -358,44 +358,6 @@ function initMap() {
             scrollwheel: false,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             center: {lat: locations[0].lat, lng: locations[0].long}
-
-    });          
-        infoWindow = new google.maps.InfoWindow;
-
-
-    // Try HTML5 geolocation
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-        };
-        var userimg = 'assets/images/user-location.png';
-        
-        var userLoc = new google.maps.Marker({
-            icon: userimg,
-            position: pos,
-            map: mapCanvas,
-
-        }); 
-        // mapCanvas.setCenter(pos);
-        // mapCanvas.setZoom(16);
-        }, function() {
-            console.log("hi from callb " + pos);
-            // mapCanvas.setCenter(pos);
-            // mapCanvas.setZoom(16);
-            handleLocationError(true, infoWindow, mapCanvas.getCenter());
-        }); 
-    } else {
-        // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, mapCanvas.getCenter());
-    }
-
-
-        for (var i = 0; i < locations.length; i++) {  
-        var markerImage = 'assets/images/marker_sm.png';
-        var contentString = '<img style="height:60px; padding-right:2px" src=' + locations[i].photos[0] + '>' + '<img height="60px"src=' + locations[i].photos[1] + '>' + "<br />" + locations[i].title + "<br />" + locations[i].est;
-
     });          
     infoWindow = new google.maps.InfoWindow;
 
@@ -405,9 +367,8 @@ function initMap() {
         var markerImage = 'assets/images/marker_sm.png';
         var contentString = '<img style="height:60px; padding-right:2px" src=' + locations[i].photos[0] + '>' + 
                             '<img height="60px"src=' + locations[i].photos[1] + '>' + "<br />" + locations[i].title + 
-                            "<br />" + locations[i].est + "<br />" + '<a class="readMore" href="landmarks.html#'+ locations[i].name +'">Read More</a>';
-
-      var infowindow = new google.maps.InfoWindow({content: contentString, maxWidth: 400});
+                            "<br />" + locations[i].est + "<br />" + '<a href="landmarks.html#'+ locations[i].name +'">Read More</a>';
+        var infowindow = new google.maps.InfoWindow({content: contentString, maxWidth: 400});
         var marker = new google.maps.Marker({
             position: {lat: locations[i].lat, lng: locations[i].long},
             icon: markerImage,
@@ -420,19 +381,11 @@ function initMap() {
             marker2.addListener('click', function () {
             infowindow2.open(mapCanvas, marker2);
             });
-
         }) (infowindow, marker);        
     }
 
-
-<<<<<<< HEAD
-=======
-    mapCanvas.setCenter(userLoc);
-    mapCanvas.setZoom(15);
-
->>>>>>> f5c44f69afcf2aba43f91a2f0d7a82b934488fdc
-    
 }
+
 
 
 
@@ -444,16 +397,12 @@ document.getElementById( "home" ).onclick = function() {
 document.getElementById( "landmarks" ).onclick = function() {
     location.href = "landmarks.html";
 };
-
 document.getElementById( "browse" ).onclick = function() {
-    location.href = "northside-berkeley.html";
+    location.href = "browse-by-map.html";
 };
-
 document.getElementById( "tour" ).onclick = function() {
-    location.href = "walking-tour.html";
-
+    location.href = "index.html";
 };
-
 document.getElementById( "contact" ).onclick = function() {
     location.href = "index.html";
 };

@@ -317,9 +317,48 @@ var locations = [
     title: "Municipal Incinerator",
     est: "Established: 1909",
     photos: ["https://bit.ly/2KhyE3X", "https://bit.ly/2KSmiQS"], 
-    text:"A municipal incinerator was considered the best “modern” method of disposing of garbage. In 1909 one was constructed but after one trial burn it was discovered that did not operate properly, and it was shut down. In 1914, a new incinerator was constructed. The building is unusual because of its ornamental use of concrete and curved Mission Revival–style roof line. It is a distinctive industrial structure, without windows, and marks the location of the city’s northwest boundary."
+    text: "A municipal incinerator was considered the best “modern” method of disposing of garbage. In 1909 one was constructed but after one trial burn it was discovered that did not operate properly, and it was shut down. In 1914, a new incinerator was constructed. The building is unusual because of its ornamental use of concrete and curved Mission Revival–style roof line. It is a distinctive industrial structure, without windows, and marks the location of the city’s northwest boundary."
     }
 ];
+
+function initMap2() {
+    
+    mapCanvas = new google.maps.Map(document.getElementById('map'), {
+            zoom: 14,
+            panControl: false,
+            scrollwheel: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            center: {lat: locations[0].lat, lng: locations[0].long}
+    });          
+    infoWindow = new google.maps.InfoWindow;
+
+
+    // Adding all landmark markers & attached infowindows
+    for (var i = 0; i < locations.length; i++) {  
+        var markerImage = 'assets/images/marker_sm.png';
+        var contentString = '<img style="height:60px; padding-right:2px" src=' + locations[i].photos[0] + '>' + 
+                            '<img height="60px"src=' + locations[i].photos[1] + '>' + "<br />" + "<strong>" + locations[i].title + "</strong>" +
+                            "<br />" + locations[i].est;
+        var infowindow = new google.maps.InfoWindow({content: contentString, maxWidth: 400});
+        var marker = new google.maps.Marker({
+            position: {lat: locations[i].lat, lng: locations[i].long},
+            icon: markerImage,
+            map: mapCanvas,
+            text: infowindow,
+            // test: listen
+        });
+        
+        (function(infowindow2, marker2) {
+            marker2.addListener('click', function () {
+            infowindow2.open(mapCanvas, marker2);
+            });
+        }) (infowindow, marker);        
+    }
+
+}
+initMap2();
+
+
 
     var startLocation;
     var endLocation;
@@ -365,16 +404,6 @@ var locations = [
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
-    directionsService.route({
-        origin: {lat: startLat, lng: startLong},
-        destination: {lat: endLat, lng: endLong},
-        travelMode: 'WALKING'
-    }, function(response, status) {
-        if (status === 'OK') {
-            directionsDisplay.setDirections(response);
-            alert( (response.routes[0].legs[0].distance.value)/1609.34)
-
-
     
     var waypts = [];
     var checkboxArray = document.getElementById('waypoints');
@@ -398,59 +427,10 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
             $("#route-dist").text( "Distance: " + (response.routes[0].legs[0].distance.text)).css("font-weight", "Bold");
             $("#route-time").text( "Duration: " + response.routes[0].legs[0].duration.text).css("font-weight", "Bold");
             var route = response.routes[0]; //
-
         } else {
             window.alert('Directions request failed due to ' + status);
             console.log("there's no route between these two locations. Please think about how little freetime the computer has before you request something stupid like this again")
         }
-
-        console.log(startLat);
-        console.log(startLong);
-    });
-    
-    }
-
-
-    function initMap() {
-        
-        var mapCanvas = new google.maps.Map(document.getElementById('map'), {
-                zoom: 14,
-                panControl: false,
-                scrollwheel: false,
-                mapTypeId: google.maps.MapTypeId.ROADMAP,
-                center: {lat: startLat, lng: startLong}
-            }); 
-            var markerImage = 'assets/images/marker_sm.png';
-            
-            var startMarker = new google.maps.Marker({
-                position: {lat: startLat, lng: startLong},
-                icon: markerImage,
-                map: mapCanvas
-            });
-
-            var endMarker = new google.maps.Marker({
-                position: {lat: endLat, lng: endLong},
-                icon: markerImage,
-                map: mapCanvas
-            });
-        
-            // Routing between landmarks
-        var directionsService = new google.maps.DirectionsService;
-        var directionsDisplay = new google.maps.DirectionsRenderer;
-        directionsDisplay.setMap(mapCanvas);
-        
-        
-        var onChangeHandler = function() {
-            calculateAndDisplayRoute(directionsService, directionsDisplay);
-            };
-            // document.getElementById('start').addEventListener('click', onChangeHandler);
-            // document.getElementById('end').addEventListener('click', onChangeHandler); 
-            $("#start-location a").on('click', onChangeHandler());    
-            $("#end-location a").on('click', onChangeHandler());       
-
-            
-        }
-
     });
 }
 
@@ -516,7 +496,6 @@ function initMap() {
 
 }
 
-
         var image1 = locations[3].photos[0];
         var image2 = $("#photo2");
 
@@ -529,8 +508,6 @@ function initMap() {
         image2.append(locations[3].photos[0]);
 
 
-        console.log(locations[3].name);
-        console.log(locations[3].photos[0]);
 
         document.getElementById( "home" ).onclick = function() {
             location.href = "index.html";
@@ -539,18 +516,17 @@ function initMap() {
         document.getElementById( "landmarks" ).onclick = function() {
             location.href = "landmarks.html";
         };
-
         document.getElementById( "browse" ).onclick = function() {
-            location.href = "northside-berkeley.html";
+            location.href = "browse-by-map.html";
         };
-
         document.getElementById( "tour" ).onclick = function() {
-            location.href = "walking-tour.html";
+            location.href = "index.html";
         };
-
         document.getElementById( "contact" ).onclick = function() {
             location.href = "index.html";
         };        
+
+        
 
 
       
