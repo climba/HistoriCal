@@ -374,5 +374,5 @@ document.getElementById( "tour" ).onclick = function() {
 };
 
 document.getElementById( "contact" ).onclick = function() {
-    location.href = "index.html";
+    location.href = "contact.html";
 };
