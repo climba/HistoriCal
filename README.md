@@ -1,6 +1,6 @@
 # [Welcome to HistoriCal](https://climba.github.io/HistoriCal/)
 
-[HistoriCal](https://climba.github.io/HistoriCal/) is a fun and interactive way to tour the historical landmard of the Berkeley Area [Utilizes Bootstrap4](http://getbootstrap.com/) created by [Sophie Obayashi](https://github.com/skobayash/), [Perry Lin](https://github.com/prry93/), [Dayan Thorne](https://github.com/dayansfo/) and [Mike White](https://github.com/climba/) .
+[HistoriCal](https://climba.github.io/HistoriCal/) is a fun and interactive way to tour the historical landmard of the Berkeley Area! HistoriCAL [Utilizes Bootstrap4](http://getbootstrap.com/). And was created by [Sophie Obayashi](https://github.com/skobayash/), [Perry Lin](https://github.com/prry93/), [Dayan Thorne](https://github.com/dayansfo/) and [Mike White](https://github.com/climba/) .
 
 ## Preview
 
@@ -8,7 +8,7 @@
 
 **[View Live Preview](https://climba.github.io/HistoriCal/)**
 
-## Status
+## Status`
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-modern-business/master/LICENSE)
 [![Build Status](https://travis-ci.org/BlackrockDigital/startbootstrap-modern-business.svg?branch=master)](https://travis-ci.org/BlackrockDigital/startbootstrap-modern-business)
