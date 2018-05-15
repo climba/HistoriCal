@@ -365,7 +365,7 @@ function initMap() {
         var markerImage = 'assets/images/marker_sm.png';
         var contentString = '<img style="height:60px; padding-right:2px" src=' + locations[i].photos[0] + '>' + 
                             '<img height="60px"src=' + locations[i].photos[1] + '>' + "<br />" + locations[i].title + 
-                            "<br />" + locations[i].est + "<br />" + '<a href="landmarks.html#'+ locations[i].name +'">Read More</a>';
+                            "<br />" + locations[i].est + "<br />" + '<a class="readMore" href="landmarks.html#'+ locations[i].name +'">Read More</a>';
         var infowindow = new google.maps.InfoWindow({content: contentString, maxWidth: 400});
         var marker = new google.maps.Marker({
             position: {lat: locations[i].lat, lng: locations[i].long},

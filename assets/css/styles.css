@@ -17,6 +17,11 @@ body {
   color: #FDB515;
 }
 
+.readMore {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+}
 
 img .infobox {
   height: 60px;
