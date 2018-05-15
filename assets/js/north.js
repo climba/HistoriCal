@@ -210,7 +210,7 @@
                 panControl: false,
                 scrollwheel: false,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
-                center: {lat: locations[4].lat, lng: locations[4].long}
+                center: {lat: locations[11].lat, lng: locations[11].long}
             });
                 
         for (var i = 0; i < locations.length; i++) { 
