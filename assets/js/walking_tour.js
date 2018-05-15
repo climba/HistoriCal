@@ -356,14 +356,30 @@ var locations = [
 })
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+   //
+    var waypts = [];
+    var checkboxArray = document.getElementById('waypoints');
+    for (var i = 0; i < checkboxArray.length; i++) {
+        if (checkboxArray.options[i].selected) {
+        waypts.push({
+            location: checkboxArray[i].value,
+            stopover: true
+        });
+        }
+    }
+   // 
     directionsService.route({
         origin: {lat: startLat, lng: startLong},
         destination: {lat: endLat, lng: endLong},
-        travelMode: 'WALKING'
+        travelMode: 'WALKING',
+        waypoints: waypts, //
+        optimizeWaypoints: true //
     }, function(response, status) {
         if (status === 'OK') {
             directionsDisplay.setDirections(response);
-            alert( (response.routes[0].legs[0].distance.value)/1609.34)
+            console.log( "Distance: " + (response.routes[0].legs[0].distance.text));
+            console.log( "Duration: " + response.routes[0].legs[0].duration.text);
+            var route = response.routes[0]; //
         } else {
             window.alert('Directions request failed due to ' + status);
             console.log("there's no route between these two locations. Please think about how little freetime the computer has before you request something stupid like this again")
@@ -430,5 +446,27 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         console.log(locations[3].photos[0]);
 
         
+var options = [];
+
+$( '.dropdown-choice a' ).on( 'click', function( event ) {
+
+   var $target = $( event.currentTarget ),
+       val = $target.attr( 'data-value' ),
+       $inp = $target.find( 'input' ),
+       idx;
+
+   if ( ( idx = options.indexOf( val ) ) > -1 ) {
+      options.splice( idx, 1 );
+      setTimeout( function() { $inp.prop( 'checked', false ) }, 0);
+   } else {
+      options.push( val );
+      setTimeout( function() { $inp.prop( 'checked', true ) }, 0);
+   }
+
+   $( event.target ).blur();
+      
+   console.log( options );
+   return false;
+});
 
       
