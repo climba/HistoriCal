@@ -1,0 +1,50 @@
+body {
+  padding-top: 54px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#map {
+  width: 100%; height: 400px; margin-top: 40px; margin-bottom: 40px;
+}
+
+.gm-style img .infobox { 
+  max-width: none; 
+  height: 60px;
+  padding-right: 2px;
+}
+
+.calNav {
+  color: #FDB515;
+}
+
+
+img .infobox {
+  height: 60px;
+}
+
+.info-window {
+  font-family: 'Montserrat', sans-serif;
+}
+.info-content {
+  color: #999;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+.carousel-item {
+  height: 65vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
