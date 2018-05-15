@@ -356,64 +356,74 @@ var locations = [
 })
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+
+    
+    var waypts = [];
+    var checkboxArray = document.getElementById('waypoints');
+    for (var i = 0; i < checkboxArray.length; i++) {
+      if (checkboxArray.options[i].selected) {
+        waypts.push({
+          location: checkboxArray[i].value,
+          stopover: true
+        });
+      }
+    }
     directionsService.route({
         origin: {lat: startLat, lng: startLong},
         destination: {lat: endLat, lng: endLong},
-        travelMode: 'WALKING'
+        travelMode: 'WALKING',
+        waypoints: waypts, //
+        optimizeWaypoints: true //
     }, function(response, status) {
         if (status === 'OK') {
             directionsDisplay.setDirections(response);
-            alert( (response.routes[0].legs[0].distance.value)/1609.34)
+            console.log( "Distance: " + (response.routes[0].legs[0].distance.text));
+            console.log( "Duration: " + response.routes[0].legs[0].duration.text);
+            var route = response.routes[0]; //
         } else {
             window.alert('Directions request failed due to ' + status);
             console.log("there's no route between these two locations. Please think about how little freetime the computer has before you request something stupid like this again")
         }
-        console.log(startLat);
-        console.log(startLong);
     });
+}
+
+
+function initMap() {
     
-    }
+    var mapCanvas = new google.maps.Map(document.getElementById('map'), {
+            zoom: 14,
+            panControl: false,
+            scrollwheel: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            center: {lat: startLat, lng: startLong}
+        }); 
+        var markerImage = 'assets/images/marker_sm.png';
+        
+        var startMarker = new google.maps.Marker({
+            position: {lat: startLat, lng: startLong},
+            icon: markerImage,
+            map: mapCanvas
+        });
+
+        var endMarker = new google.maps.Marker({
+            position: {lat: endLat, lng: endLong},
+            icon: markerImage,
+            map: mapCanvas
+        });
+    
+        // Routing between landmarks
+    var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer;
+    directionsDisplay.setMap(mapCanvas);
 
 
-    function initMap() {
-        
-        var mapCanvas = new google.maps.Map(document.getElementById('map'), {
-                zoom: 14,
-                panControl: false,
-                scrollwheel: false,
-                mapTypeId: google.maps.MapTypeId.ROADMAP,
-                center: {lat: startLat, lng: startLong}
-            }); 
-            var markerImage = 'assets/images/marker_sm.png';
-            
-            var startMarker = new google.maps.Marker({
-                position: {lat: startLat, lng: startLong},
-                icon: markerImage,
-                map: mapCanvas
-            });
 
-            var endMarker = new google.maps.Marker({
-                position: {lat: endLat, lng: endLong},
-                icon: markerImage,
-                map: mapCanvas
-            });
-        
-            // Routing between landmarks
-        var directionsService = new google.maps.DirectionsService;
-        var directionsDisplay = new google.maps.DirectionsRenderer;
-        directionsDisplay.setMap(mapCanvas);
-        
-        
-        var onChangeHandler = function() {
-            calculateAndDisplayRoute(directionsService, directionsDisplay);
-            };
-            // document.getElementById('start').addEventListener('click', onChangeHandler);
-            // document.getElementById('end').addEventListener('click', onChangeHandler); 
-            $("#start-location a").on('click', onChangeHandler());    
-            $("#end-location a").on('click', onChangeHandler());       
+    //On submit click, route between points
+     $("#submit-map").on('click', function() {
+        calculateAndDisplayRoute(directionsService, directionsDisplay);
+     });        
 
-            
-        }
+}
 
         var image1 = locations[3].photos[0];
         var image2 = $("#photo2");
@@ -426,8 +436,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         $("#est2").html(locations[2].est);
         image2.append(locations[3].photos[0]);
 
-        console.log(locations[3].name);
-        console.log(locations[3].photos[0]);
+
 
         document.getElementById( "home" ).onclick = function() {
             location.href = "index.html";
@@ -447,5 +456,6 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         };        
 
         
+
 
       

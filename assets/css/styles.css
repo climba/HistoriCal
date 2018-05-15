@@ -25,6 +25,7 @@ img .infobox {
 .info-window {
   font-family: 'Montserrat', sans-serif;
 }
+
 .info-content {
   color: #999;
 }
@@ -47,4 +48,8 @@ img .infobox {
 
 .portfolio-item {
   margin-bottom: 30px;
+}
+
+.submit {
+  margin: 0 auto;
 }

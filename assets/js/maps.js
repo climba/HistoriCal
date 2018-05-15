@@ -331,13 +331,22 @@ var locations = [
     }
 ];
 
-    // $.getJSON("test.json", function(json) {
-    //     console.log(json); // this will show the info it in firebug console
-    // });   
+  
 
  
  
 var mapCanvas, infoWindow;
+var userLat, userLng;
+var userLoc = {
+    lat: userLat,
+    lng: userLng
+}
+
+
+
+
+
+
 
 function initMap() {
     
@@ -347,40 +356,12 @@ function initMap() {
             scrollwheel: false,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             center: {lat: locations[0].lat, lng: locations[0].long}
-        });          
-        infoWindow = new google.maps.InfoWindow;
+    });          
+    infoWindow = new google.maps.InfoWindow;
 
 
-    // Try HTML5 geolocation
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-        };
-        var userimg = 'assets/images/user-location.png';
-        
-        var userLoc = new google.maps.Marker({
-            icon: userimg,
-            position: pos,
-            map: mapCanvas,
-
-        }); 
-        // mapCanvas.setCenter(pos);
-        // mapCanvas.setZoom(16);
-        }, function() {
-            console.log("hi from callb " + pos);
-            // mapCanvas.setCenter(pos);
-            // mapCanvas.setZoom(16);
-            handleLocationError(true, infoWindow, mapCanvas.getCenter());
-        }); 
-    } else {
-        // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, mapCanvas.getCenter());
-    }
-
-
-        for (var i = 0; i < locations.length; i++) {  
+    // Adding all landmark markers & attached infowindows
+    for (var i = 0; i < locations.length; i++) {  
         var markerImage = 'assets/images/marker_sm.png';
         var contentString = '<img style="height:60px; padding-right:2px" src=' + locations[i].photos[0] + '>' + 
                             '<img height="60px"src=' + locations[i].photos[1] + '>' + "<br />" + locations[i].title + 
@@ -398,8 +379,29 @@ function initMap() {
             marker2.addListener('click', function () {
             infowindow2.open(mapCanvas, marker2);
             });
-        })(infowindow, marker);        
+        }) (infowindow, marker);        
     }
+
+    // Getting user location
+    $.getJSON('https://ipapi.co/8.8.8.8/json/', function(data){
+        userLat = data.latitude;
+        userLng = data.longitude;
+        console.log(data.latitude);
+        console.log(data.longitude);
+    });
+
+
+    // Adding marker at user location
+    var userImg = 'assets/images/user-location.png';
+    var userMarker = new google.maps.Marker({
+        icon: userImg,
+        position: userLoc,
+        map: mapCanvas
+
+    }); 
+
+    mapCanvas.setCenter(userLoc);
+    mapCanvas.setZoom(15);
     
 }
 
