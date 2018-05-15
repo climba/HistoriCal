@@ -7,14 +7,14 @@
 var locations = [
     // Berkeley Center
     {
-    name: "Springer Gateway",
+    name: "SpringerGateway",
     lat: 37.871754,
     long: -122.265188,
     title: "<strong>Springer Memorial Gateway</strong>",
     est: "Established: 1964",
     photos: ["assets/images/springer2.jpg", "assets/images/springer3.jpg"]
     },{
-    name: "Berkeley Center",
+    name: "BerkeleyCenter",
     lat: 37.8715926,
     long: -122.272747,
     title: "<strong>Berkeley Center</strong>",
@@ -382,7 +382,9 @@ function initMap() {
 
         for (var i = 0; i < locations.length; i++) {  
         var markerImage = 'assets/images/marker_sm.png';
-        var contentString = '<img style="height:60px; padding-right:2px" src=' + locations[i].photos[0] + '>' + '<img height="60px"src=' + locations[i].photos[1] + '>' + "<br />" + locations[i].title + "<br />" + locations[i].est;
+        var contentString = '<img style="height:60px; padding-right:2px" src=' + locations[i].photos[0] + '>' + 
+                            '<img height="60px"src=' + locations[i].photos[1] + '>' + "<br />" + locations[i].title + 
+                            "<br />" + locations[i].est + "<br />" + '<a href="landmarks.html#'+ locations[i].name +'">Read More</a>';
         var infowindow = new google.maps.InfoWindow({content: contentString, maxWidth: 400});
         var marker = new google.maps.Marker({
             position: {lat: locations[i].lat, lng: locations[i].long},
