@@ -17,6 +17,12 @@ body {
   color: #FDB515;
 }
 
+.readMore {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+}
+
 
 img .infobox {
   height: 60px;
@@ -25,6 +31,7 @@ img .infobox {
 .info-window {
   font-family: 'Montserrat', sans-serif;
 }
+
 .info-content {
   color: #999;
 }
@@ -48,3 +55,8 @@ img .infobox {
 .portfolio-item {
   margin-bottom: 30px;
 }
+
+.submit {
+  margin: 0 auto;
+}
+

@@ -7,14 +7,16 @@
 var locations = [
     // Berkeley Center
     {
-    name: "Springer Gateway",
+
+    name: "SpringerGateway",
     lat: 37.871754,
     long: -122.265188,
     title: "<strong>Springer Memorial Gateway</strong>",
     est: "Established: 1964",
     photos: ["assets/images/springer2.jpg", "assets/images/springer3.jpg"]
     },{
-    name: "Berkeley Center",
+
+    name: "BerkeleyCenter",
     lat: 37.8715926,
     long: -122.272747,
     title: "<strong>Berkeley Center</strong>",
@@ -331,13 +333,19 @@ var locations = [
     }
 ];
 
-    // $.getJSON("test.json", function(json) {
-    //     console.log(json); // this will show the info it in firebug console
-    // });   
+
 
  
  
 var mapCanvas, infoWindow;
+
+var userLat, userLng;
+var userLoc = {
+    lat: userLat,
+    lng: userLng
+}
+
+
 
 function initMap() {
     
@@ -347,7 +355,8 @@ function initMap() {
             scrollwheel: false,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             center: {lat: locations[0].lat, lng: locations[0].long}
-        });          
+
+    });          
         infoWindow = new google.maps.InfoWindow;
 
 
@@ -383,7 +392,19 @@ function initMap() {
         for (var i = 0; i < locations.length; i++) {  
         var markerImage = 'assets/images/marker_sm.png';
         var contentString = '<img style="height:60px; padding-right:2px" src=' + locations[i].photos[0] + '>' + '<img height="60px"src=' + locations[i].photos[1] + '>' + "<br />" + locations[i].title + "<br />" + locations[i].est;
-        var infowindow = new google.maps.InfoWindow({content: contentString, maxWidth: 400});
+
+    });          
+    infoWindow = new google.maps.InfoWindow;
+
+
+    // Adding all landmark markers & attached infowindows
+    for (var i = 0; i < locations.length; i++) {  
+        var markerImage = 'assets/images/marker_sm.png';
+        var contentString = '<img style="height:60px; padding-right:2px" src=' + locations[i].photos[0] + '>' + 
+                            '<img height="60px"src=' + locations[i].photos[1] + '>' + "<br />" + locations[i].title + 
+                            "<br />" + locations[i].est + "<br />" + '<a class="readMore" href="landmarks.html#'+ locations[i].name +'">Read More</a>';
+
+      var infowindow = new google.maps.InfoWindow({content: contentString, maxWidth: 400});
         var marker = new google.maps.Marker({
             position: {lat: locations[i].lat, lng: locations[i].long},
             icon: markerImage,
@@ -396,8 +417,31 @@ function initMap() {
             marker2.addListener('click', function () {
             infowindow2.open(mapCanvas, marker2);
             });
-        })(infowindow, marker);        
+
+        }) (infowindow, marker);        
     }
+
+    // Getting user location
+    $.getJSON('https://ipapi.co/8.8.8.8/json/', function(data){
+        userLat = data.latitude;
+        userLng = data.longitude;
+        console.log(data.latitude);
+        console.log(data.longitude);
+    });
+
+
+    // Adding marker at user location
+    var userImg = 'assets/images/user-location.png';
+    var userMarker = new google.maps.Marker({
+        icon: userImg,
+        position: userLoc,
+        map: mapCanvas
+
+    }); 
+
+    mapCanvas.setCenter(userLoc);
+    mapCanvas.setZoom(15);
+
     
 }
 
@@ -417,12 +461,16 @@ document.getElementById( "home" ).onclick = function() {
 document.getElementById( "landmarks" ).onclick = function() {
     location.href = "landmarks.html";
 };
+
 document.getElementById( "browse" ).onclick = function() {
     location.href = "northside-berkeley.html";
 };
+
 document.getElementById( "tour" ).onclick = function() {
     location.href = "walking-tour.html";
+
 };
+
 document.getElementById( "contact" ).onclick = function() {
     location.href = "index.html";
 };

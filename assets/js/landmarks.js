@@ -347,7 +347,8 @@ for (var i=0; i< locations.length; i++) {
 
             <div class="col-md-6">
                 <div class="card panel-default">
-                <h5 id="${locations[i].name}" class="card-title">${locations[i].title}</h5>
+
+                <h5 class="card-title">${locations[i].title}<a id="${locations[i].name}"></a></h5>
                 <p class="card-text">${locations[i].est}</p>
                 <p class="card-text">${locations[i].text}</p>
                 </div>
@@ -367,10 +368,12 @@ document.getElementById( "landmarks" ).onclick = function() {
     location.href = "landmarks.html";
 };
 document.getElementById( "browse" ).onclick = function() {
+
     location.href = "northside-berkeley.html";
 };
 document.getElementById( "tour" ).onclick = function() {
     location.href = "walking-tour.html";
+
 };
 document.getElementById( "contact" ).onclick = function() {
     location.href = "index.html";

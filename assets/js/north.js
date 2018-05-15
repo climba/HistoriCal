@@ -206,11 +206,13 @@
     function initMapN() {
         
         var mapCanvas = new google.maps.Map(document.getElementById('map'), {
+
                 zoom: 15,
                 panControl: false,
                 scrollwheel: false,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 center: {lat: locations[6].lat, lng: locations[6].long}
+
             });
                 
         for (var i = 0; i < locations.length; i++) { 
@@ -249,12 +251,15 @@
     document.getElementById( "landmarks" ).onclick = function() {
         location.href = "landmarks.html";
     };
+
     document.getElementById( "browse" ).onclick = function() {
         location.href = "northside-berkeley.html";
     };
+
     document.getElementById( "tour" ).onclick = function() {
         location.href = "walking-tour.html";
     };
+
     document.getElementById( "contact" ).onclick = function() {
         location.href = "index.html";
     };
