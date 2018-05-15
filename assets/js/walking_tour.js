@@ -355,6 +355,25 @@ var locations = [
     
 })
 
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+    directionsService.route({
+        origin: {lat: startLat, lng: startLong},
+        destination: {lat: endLat, lng: endLong},
+        travelMode: 'WALKING'
+    }, function(response, status) {
+        if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+            alert( (response.routes[0].legs[0].distance.value)/1609.34)
+        } else {
+            window.alert('Directions request failed due to ' + status);
+            console.log("there's no route between these two locations. Please think about how little freetime the computer has before you request something stupid like this again")
+        }
+        console.log(startLat);
+        console.log(startLong);
+    });
+    
+    }
+
 
     function initMap() {
         
@@ -378,8 +397,20 @@ var locations = [
                 icon: markerImage,
                 map: mapCanvas
             });
-    
-                
+        
+            // Routing between landmarks
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+        directionsDisplay.setMap(mapCanvas);
+        
+        
+        var onChangeHandler = function() {
+            calculateAndDisplayRoute(directionsService, directionsDisplay);
+            };
+            // document.getElementById('start').addEventListener('click', onChangeHandler);
+            // document.getElementById('end').addEventListener('click', onChangeHandler); 
+            $("#start-location a").on('click', onChangeHandler());    
+            $("#end-location a").on('click', onChangeHandler());       
 
             
         }
