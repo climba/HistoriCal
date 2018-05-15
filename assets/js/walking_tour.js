@@ -445,18 +445,12 @@ $.getJSON('https://ipapi.co/8.8.8.8/json/', function(data){
     console.log(userLng);
 });
 
+$.get("https://ipinfo.io", function(response) {
+    console.log(response.loc);
+}, "jsonp")
 
-// Adding marker at user location
-var userImg = 'assets/images/user-location.png';
-var userMarker = new google.maps.Marker({
-    icon: userImg,
-    position: userLoc,
-    map: mapCanvas
 
-}); 
 
-// mapCanvas.setCenter(userLoc);
-// mapCanvas.setZoom(15);
 
 
 function initMap() {
