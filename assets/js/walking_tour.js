@@ -365,6 +365,16 @@ var locations = [
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
+    directionsService.route({
+        origin: {lat: startLat, lng: startLong},
+        destination: {lat: endLat, lng: endLong},
+        travelMode: 'WALKING'
+    }, function(response, status) {
+        if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+            alert( (response.routes[0].legs[0].distance.value)/1609.34)
+
+
     
     var waypts = [];
     var checkboxArray = document.getElementById('waypoints');
@@ -388,10 +398,59 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
             $("#route-dist").text( "Distance: " + (response.routes[0].legs[0].distance.text)).css("font-weight", "Bold");
             $("#route-time").text( "Duration: " + response.routes[0].legs[0].duration.text).css("font-weight", "Bold");
             var route = response.routes[0]; //
+
         } else {
             window.alert('Directions request failed due to ' + status);
             console.log("there's no route between these two locations. Please think about how little freetime the computer has before you request something stupid like this again")
         }
+
+        console.log(startLat);
+        console.log(startLong);
+    });
+    
+    }
+
+
+    function initMap() {
+        
+        var mapCanvas = new google.maps.Map(document.getElementById('map'), {
+                zoom: 14,
+                panControl: false,
+                scrollwheel: false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                center: {lat: startLat, lng: startLong}
+            }); 
+            var markerImage = 'assets/images/marker_sm.png';
+            
+            var startMarker = new google.maps.Marker({
+                position: {lat: startLat, lng: startLong},
+                icon: markerImage,
+                map: mapCanvas
+            });
+
+            var endMarker = new google.maps.Marker({
+                position: {lat: endLat, lng: endLong},
+                icon: markerImage,
+                map: mapCanvas
+            });
+        
+            // Routing between landmarks
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+        directionsDisplay.setMap(mapCanvas);
+        
+        
+        var onChangeHandler = function() {
+            calculateAndDisplayRoute(directionsService, directionsDisplay);
+            };
+            // document.getElementById('start').addEventListener('click', onChangeHandler);
+            // document.getElementById('end').addEventListener('click', onChangeHandler); 
+            $("#start-location a").on('click', onChangeHandler());    
+            $("#end-location a").on('click', onChangeHandler());       
+
+            
+        }
+
     });
 }
 
@@ -457,6 +516,7 @@ function initMap() {
 
 }
 
+
         var image1 = locations[3].photos[0];
         var image2 = $("#photo2");
 
@@ -469,6 +529,8 @@ function initMap() {
         image2.append(locations[3].photos[0]);
 
 
+        console.log(locations[3].name);
+        console.log(locations[3].photos[0]);
 
         document.getElementById( "home" ).onclick = function() {
             location.href = "index.html";
@@ -477,17 +539,18 @@ function initMap() {
         document.getElementById( "landmarks" ).onclick = function() {
             location.href = "landmarks.html";
         };
+
         document.getElementById( "browse" ).onclick = function() {
-            location.href = "browse-by-map.html";
+            location.href = "northside-berkeley.html";
         };
+
         document.getElementById( "tour" ).onclick = function() {
-            location.href = "index.html";
+            location.href = "walking-tour.html";
         };
+
         document.getElementById( "contact" ).onclick = function() {
             location.href = "index.html";
         };        
-
-        
 
 
       
