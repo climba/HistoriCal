@@ -33,7 +33,7 @@ HistoriCAL's mission is to give users a greater understanding of the rich histor
 - [Sophie Obayashi](https://github.com/skobayash/)
 - [Perry Lin](https://github.com/prry93/)
 - [Dayan Thorne](https://github.com/dayansfo/)
- -[Mike White](https://github.com/climba/) 
+- [Mike White](https://github.com/climba/) 
 
 
 
