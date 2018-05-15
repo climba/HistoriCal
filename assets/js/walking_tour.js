@@ -321,42 +321,49 @@ var locations = [
     }
 ];
 
+var mapCanvas;
+var infowindow;
+
 function initMap2() {
     
-    mapCanvas = new google.maps.Map(document.getElementById('map'), {
+    var mapCanvas = new google.maps.Map(document.getElementById('map'), {
+
             zoom: 14,
             panControl: false,
             scrollwheel: false,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             center: {lat: locations[0].lat, lng: locations[0].long}
-    });          
-    infoWindow = new google.maps.InfoWindow;
 
+        });
+            
+    for (var i = 0; i < locations.length; i++) { 
+        createMarker(locations[i]);
+    }   
 
-    // Adding all landmark markers & attached infowindows
-    for (var i = 0; i < locations.length; i++) {  
+    function createMarker(obj) {
         var markerImage = 'assets/images/marker_sm.png';
+        // var contentString = obj.title + "<br />" + obj.est;
         var contentString = '<img style="height:60px; padding-right:2px" src=' + locations[i].photos[0] + '>' + 
-                            '<img height="60px"src=' + locations[i].photos[1] + '>' + "<br />" + "<strong>" + locations[i].title + "</strong>" +
-                            "<br />" + locations[i].est;
-        var infowindow = new google.maps.InfoWindow({content: contentString, maxWidth: 400});
+        '<img height="60px"src=' + locations[i].photos[1] + '>' + "<br />" + locations[i].title + 
+        "<br />" + locations[i].est;
+        
         var marker = new google.maps.Marker({
-            position: {lat: locations[i].lat, lng: locations[i].long},
+            position: {lat: obj.lat, lng: obj.long},
             icon: markerImage,
             map: mapCanvas,
-            text: infowindow,
-            // test: listen
-        });
-        
-        (function(infowindow2, marker2) {
-            marker2.addListener('click', function () {
-            infowindow2.open(mapCanvas, marker2);
+            text: contentString,
+        }); 
+        google.maps.event.addListener(marker, "click", function() {
+            if (infowindow) infowindow.close();
+            infowindow = new google.maps.InfoWindow({
+                content: this.text,
+                maxWidth: 400
             });
-        }) (infowindow, marker);        
+            infowindow.open(mapCanvas, marker);
+        });
+        return marker;
     }
-    
-
-}
+}   
 initMap2();
 
 

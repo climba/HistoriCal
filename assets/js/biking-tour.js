@@ -438,7 +438,50 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     });
 }
 
+var mapCanvas;
+var infowindow;
 
+function initMap2() {
+    
+    var mapCanvas = new google.maps.Map(document.getElementById('map'), {
+
+            zoom: 14,
+            panControl: false,
+            scrollwheel: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            center: {lat: locations[0].lat, lng: locations[0].long}
+
+        });
+            
+    for (var i = 0; i < locations.length; i++) { 
+        createMarker(locations[i]);
+    }   
+
+    function createMarker(obj) {
+        var markerImage = 'assets/images/marker_sm.png';
+        // var contentString = obj.title + "<br />" + obj.est;
+        var contentString = '<img style="height:60px; padding-right:2px" src=' + locations[i].photos[0] + '>' + 
+        '<img height="60px"src=' + locations[i].photos[1] + '>' + "<br />" + locations[i].title + 
+        "<br />" + locations[i].est;
+        
+        var marker = new google.maps.Marker({
+            position: {lat: obj.lat, lng: obj.long},
+            icon: markerImage,
+            map: mapCanvas,
+            text: contentString,
+        }); 
+        google.maps.event.addListener(marker, "click", function() {
+            if (infowindow) infowindow.close();
+            infowindow = new google.maps.InfoWindow({
+                content: this.text,
+                maxWidth: 400
+            });
+            infowindow.open(mapCanvas, marker);
+        });
+        return marker;
+    }
+}   
+initMap2();
 
 
 

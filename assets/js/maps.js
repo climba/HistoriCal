@@ -335,10 +335,7 @@ var locations = [
 
  
  
-var mapCanvas, infoWindow;
-
-
-
+var mapCanvas;
 var infowindow;
 
 function initMap() {
