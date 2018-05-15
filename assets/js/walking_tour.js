@@ -366,20 +366,28 @@ initMap2();
     var startLong;
     var endLat;
     var endLong;
+    var userLat;
+    var userLng;
 
    $("#start-location a").on('click', function(){
        console.log(this)
        startLocation = $(this).text();
-       for(var i =0; i < locations.length; i++) {
-        if(locations[i].title === startLocation) {
-            startLat = locations[i].lat;
-            startLong = locations[i].long;    
+       if(startLocation === "My Location") {
+            console.log("okaaay")
+            startLat = userLat;
+            startLong = userLng;
             initMap();
         }
-
-    }
-       
+       for(var i =0; i < locations.length; i++) {
+            if(locations[i].title === startLocation) {
+                startLat = locations[i].lat;
+                startLong = locations[i].long;    
+                initMap();
+            }
+        }
    })
+
+
    $("#end-location a").on('click', function(){
     console.log(this)
     endLocation = $(this).text();
@@ -416,8 +424,8 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     }, function(response, status) {
         if (status === 'OK') {
             directionsDisplay.setDirections(response);
-            console.log( "Distance: " + (response.routes[0].legs[0].distance.text));
-            console.log( "Duration: " + response.routes[0].legs[0].duration.text);
+            $("#route-dist").text( "Distance: " + (response.routes[0].legs[0].distance.text)).css("font-weight", "Bold");
+            $("#route-time").text( "Duration: " + response.routes[0].legs[0].duration.text).css("font-weight", "Bold");
             var route = response.routes[0]; //
         } else {
             window.alert('Directions request failed due to ' + status);
@@ -425,6 +433,30 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         }
     });
 }
+
+
+
+
+// Getting user location
+$.getJSON('https://ipapi.co/8.8.8.8/json/', function(data){
+    userLat = data.latitude;
+    userLng = data.longitude;
+    console.log(userLat);
+    console.log(userLng);
+});
+
+
+// Adding marker at user location
+var userImg = 'assets/images/user-location.png';
+var userMarker = new google.maps.Marker({
+    icon: userImg,
+    position: userLoc,
+    map: mapCanvas
+
+}); 
+
+// mapCanvas.setCenter(userLoc);
+// mapCanvas.setZoom(15);
 
 
 function initMap() {
