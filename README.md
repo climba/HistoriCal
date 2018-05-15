@@ -1,6 +1,6 @@
-# [Start Bootstrap - Modern Business](https://startbootstrap.com/template-overviews/modern-business/)
+# [Welcome to HistoriCal](https://climba.github.io/HistoriCal/)
 
-[Modern Business](http://startbootstrap.com/template-overviews/modern-business/) is a multipurpose, full website template for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This template includes 17 unique HTML pages and a working PHP contact form.
+[HistoriCal](https://climba.github.io/HistoriCal/) is a fun and interactive way to tour the historical landmard of the Berkeley Area [Utilizes Bootstrap4](http://getbootstrap.com/) created by [Sophie Obayashi](https://github.com/skobayash/), [Perry Lin](https://github.com/prry93/), [Dayan Thorne](https://github.com/dayansfo/) and [Mike White](https://github.com/climba/) .
 
 ## Preview
 
