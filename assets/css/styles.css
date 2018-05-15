@@ -58,3 +58,8 @@ img .infobox {
   margin: 0 auto;
 }
 
+.scrollable-menu {
+  height: auto;
+  max-height: 400px;
+  overflow-x: hidden;
+}
