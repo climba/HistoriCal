@@ -16,7 +16,7 @@
     name: "Berkeley Center",
     lat: 37.8715926,
     long: -122.272747,
-    title: "<strong>Berkeley Center</strong>",
+    title: "<strong>Downtown Berkeley (center of Berkeley)</strong>",
     est: "Established: 1868",
     photos: ['assets/images/berk3.jpg', 'assets/images/berk2.jpg']
     },{
@@ -33,7 +33,7 @@
     name: "greekTheater",
     lat: 37.873561,
     long: -122.254422,
-    title: "<strong>Greek Theater</strong>",
+    title: "<strong>Hearst Greek Theater</strong>",
     est: "Built: 1903",
     photos: ["https://bit.ly/2IuYlRk", "https://bit.ly/2IdKNpW"],
     text: "Built in 1903 on the site of a rough outdoor bowl already in use as an amphitheater since 1894. The project was championed by University of CA president Benjamin Ide Wheeler. The design of the theater is based directly on the ancient Greek theater of Epidaurus."
@@ -206,11 +206,13 @@
     function initMapN() {
         
         var mapCanvas = new google.maps.Map(document.getElementById('map'), {
-                zoom: 16,
+
+                zoom: 15,
                 panControl: false,
                 scrollwheel: false,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
-                center: {lat: locations[11].lat, lng: locations[11].long}
+                center: {lat: locations[6].lat, lng: locations[6].long}
+
             });
                 
         for (var i = 0; i < locations.length; i++) { 
@@ -249,12 +251,15 @@
     document.getElementById( "landmarks" ).onclick = function() {
         location.href = "landmarks.html";
     };
+
     document.getElementById( "browse" ).onclick = function() {
-        location.href = "browse-by-map.html";
+        location.href = "northside-berkeley.html";
     };
+
     document.getElementById( "tour" ).onclick = function() {
-        location.href = "index.html";
+        location.href = "walking-tour.html";
     };
+
     document.getElementById( "contact" ).onclick = function() {
         location.href = "index.html";
     };
