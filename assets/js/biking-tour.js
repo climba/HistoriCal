@@ -329,8 +329,13 @@ var locations = [
     var endLong;
 
    $("#start-location a").on('click', function(){
-       console.log(this)
-       startLocation = $(this).text();
+        console.log(this)
+        startLocation = $(this).text();
+        if(startLocation === "My Location") {
+            startLat = userLat;
+            startLong = userLng;
+            initMap();
+        }
        for(var i =0; i < locations.length; i++) {
         if(locations[i].title === startLocation) {
             startLat = locations[i].lat;

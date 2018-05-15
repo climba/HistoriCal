@@ -17,6 +17,9 @@ body {
   color: #FDB515;
 }
 
+.dropdown-menu {
+  position: absolute;
+}
 
 img .infobox {
   height: 60px;
