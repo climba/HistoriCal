@@ -17,18 +17,9 @@ body {
   color: #FDB515;
 }
 
-<<<<<<< HEAD
 .dropdown-menu {
   position: absolute;
 }
-=======
-.readMore {
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: bold;
-}
-
->>>>>>> f5c44f69afcf2aba43f91a2f0d7a82b934488fdc
 
 img .infobox {
   height: 60px;
@@ -67,3 +58,8 @@ img .infobox {
   margin: 0 auto;
 }
 
+.scrollable-menu {
+  height: auto;
+  max-height: 400px;
+  overflow-x: hidden;
+}

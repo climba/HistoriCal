@@ -354,6 +354,7 @@ function initMap2() {
             });
         }) (infowindow, marker);        
     }
+    
 
 }
 initMap2();
@@ -362,6 +363,7 @@ initMap2();
 
     var startLocation;
     var endLocation;
+    var coords;
     var startLat;
     var startLong;
     var endLat;
@@ -369,13 +371,15 @@ initMap2();
     var userLat;
     var userLng;
 
+    console.log(coords)
+
+
    $("#start-location a").on('click', function(){
        console.log(this)
        startLocation = $(this).text();
        if(startLocation === "My Location") {
-            console.log("okaaay")
-            startLat = userLat;
-            startLong = userLng;
+            startLat = 37.8720360;
+            startLong = -122.2712580;
             initMap();
         }
        for(var i =0; i < locations.length; i++) {
@@ -437,17 +441,6 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
 
 
-// Getting user location
-$.getJSON('https://ipapi.co/8.8.8.8/json/', function(data){
-    userLat = data.latitude;
-    userLng = data.longitude;
-    console.log(userLat);
-    console.log(userLng);
-});
-
-$.get("https://ipinfo.io", function(response) {
-    console.log(response.loc);
-}, "jsonp")
 
 
 
