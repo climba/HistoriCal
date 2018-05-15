@@ -63,3 +63,7 @@ img .infobox {
   max-height: 400px;
   overflow-x: hidden;
 }
+
+.card-header {
+  overflow-x: hidden
+}

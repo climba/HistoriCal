@@ -321,6 +321,7 @@ var locations = [
     }
 ];
 
+
 function initMap2() {
     
     mapCanvas = new google.maps.Map(document.getElementById('map'), {
