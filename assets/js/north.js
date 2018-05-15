@@ -93,8 +93,8 @@
     
     },{
     name: "bentley",
-    lat: 37.8776261, 
-    long: -122.257434,
+    lat: 37.877626, 
+    long: -122.257435,
     title: "<strong></strong>",
     est: "Established: 1900",
     photos: ["https://bit.ly/2G8gFuh", "https://bit.ly/2IdKyv2"],
@@ -210,7 +210,7 @@
                 panControl: false,
                 scrollwheel: false,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
-                center: {lat: locations[4].lat, lng: locations[4].long}
+                center: {lat: locations[11].lat, lng: locations[11].long}
             });
                 
         for (var i = 0; i < locations.length; i++) { 
@@ -219,7 +219,9 @@
 
         function createMarker(obj) {
             var markerImage = 'assets/images/marker_sm.png';
-            var contentString = obj.title + "<br />" + obj.est;
+            // var contentString = obj.title + "<br />" + obj.est;
+            var contentString = '<img style="height:60px; padding-right:2px" src=' + obj.photos[0] + '>' + '<img height="60px"src=' + obj.photos[1] + '>' + "<br />" + obj.title + "<br />" + obj.est;
+            
             var marker = new google.maps.Marker({
                 position: {lat: obj.lat, lng: obj.long},
                 icon: markerImage,

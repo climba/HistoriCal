@@ -89,8 +89,8 @@ var locations = [
     
     },{
     name: "bentley",
-    lat: 37.8776261, 
-    long: -122.257434,
+    lat: 37.877626, 
+    long: -122.257435,
     title: "<strong>Bentley House</strong>",
     est: "Established: TBA",
     photos: ["https://bit.ly/2G8gFuh", "https://bit.ly/2IdKyv2"],

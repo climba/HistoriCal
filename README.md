@@ -1,17 +1,16 @@
-# [Start Bootstrap - Modern Business](https://startbootstrap.com/template-overviews/modern-business/)
+# [Welcome to HistoriCal](https://climba.github.io/HistoriCal/)
 
-[Modern Business](http://startbootstrap.com/template-overviews/modern-business/) is a multipurpose, full website template for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This template includes 17 unique HTML pages and a working PHP contact form.
+[HistoriCal](https://climba.github.io/HistoriCal/) is a fun and interactive way to tour the historical landmard of the Berkeley Area! HistoriCAL [Utilizes Bootstrap4](http://getbootstrap.com/). And was created by [Sophie Obayashi](https://github.com/skobayash/), [Perry Lin](https://github.com/prry93/), [Dayan Thorne](https://github.com/dayansfo/) and [Mike White](https://github.com/climba/) .
 
 ## Preview
 
-[![Modern Business Preview](https://startbootstrap.com/assets/img/templates/modern-business.jpg)](https://blackrockdigital.github.io/startbootstrap-modern-business/)
+[![HistoriCal Preview](https://climba.github.io/HistoriCal/assets/images/Welcome-to-HistoriCal.jpg)](https://climba.github.io/HistoriCal/)
 
-**[View Live Preview](https://blackrockdigital.github.io/startbootstrap-modern-business/)**
+**[View Live Preview](https://climba.github.io/HistoriCal/)**
 
-## Status
+## Status`
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-modern-business/master/LICENSE)
-[![npm version](https://img.shields.io/npm/v/startbootstrap-modern-business.svg)](https://www.npmjs.com/package/startbootstrap-modern-business)
 [![Build Status](https://travis-ci.org/BlackrockDigital/startbootstrap-modern-business.svg?branch=master)](https://travis-ci.org/BlackrockDigital/startbootstrap-modern-business)
 [![dependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-modern-business/status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-modern-business)
 [![devDependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-modern-business/dev-status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-modern-business?type=dev)

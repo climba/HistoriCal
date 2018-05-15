@@ -1,8 +1,3 @@
-// This javascript comes from a tutorial I used to get our 
-// bootstrap page to play nice with google maps API
-// The tutorial is located here https://bit.ly/2IzuNSR
-
-
 
 var locations = [
     // Berkeley Center
@@ -12,22 +7,24 @@ var locations = [
     long: -122.265188,
     title: "<strong>Springer Memorial Gateway</strong>",
     est: "Established: 1964",
-    photos: ["assets/images/springer2.jpg", "assets/images/springer3.jpg"]
+    photos: ["assets/images/springer2.jpg", "assets/images/springer3.jpg"],
+    text: "The Springer Memorial Gateway was designed by landscape architect Thomas D. Church and constructed in 1964. It is a brick and concrete plaza at the head of the crescent of UC Berkeley and is linked to the Addison entrance. Manufacturer Russell Severance Springer (Class of 1902) bequeathed funds for the plaza in 1953."
     },{
     name: "Berkeley Center",
     lat: 37.8715926,
     long: -122.272747,
     title: "<strong>Berkeley Center</strong>",
     est: "Established: 1868",
-    photos: ['assets/images/berk3.jpg', 'assets/images/berk2.jpg']
+    photos: ['assets/images/berk3.jpg', 'assets/images/berk2.jpg'],
+    text: "Berkeley, California, was originally founded by developers who viewed the land as a prime area for tourists. The land was given to the investors from the Rancho San Antonio land grant in 1820 for use to develop a new community."    
     },{
     // Founder Rock
     name: "founderRock",
     lat: 37.875333,
     long: -122.256882,
-    title: "<strong>Founder Rock</strong>",
+    title: "<strong>Founders' Rock</strong>",
     est: "Established: 1860",
-    photos: ["https://bit.ly/2rBSQ9N", "https://bit.ly/2wyQygD"],
+    photos: ["http://bit.ly/2rCOK0p", "https://bit.ly/2wyQygD"],
     text: "On the corner of Hearst Avenue and Gayley Road, in Berkeley, California, lies the Founders' Rock, the spot where the 12 trustees of the College of California, the nascent University of California, Berkeley, stood on April 16, 1860, to dedicate the property they had just purchased."
     },{
     // UC Berkeley
@@ -35,7 +32,7 @@ var locations = [
     lat: 37.873561,
     long: -122.254422,
     title: "<strong>Greek Theater</strong>",
-    est: "Built: 1903",
+    est: "Established: 1903",
     photos: ["https://bit.ly/2IuYlRk", "https://bit.ly/2IdKNpW"],
     text: "Built in 1903 on the site of a rough outdoor bowl already in use as an amphitheater since 1894. The project was championed by University of CA president Benjamin Ide Wheeler. The design of the theater is based directly on the ancient Greek theater of Epidaurus."
     
@@ -44,7 +41,7 @@ var locations = [
     lat: 37.869502,
     long: -122.259326,
     title: "<strong>Sather Gate</strong>",
-    est: "Built: 1903",
+    est: "Established: 1903",
     photos: ["https://bit.ly/2rBX3Ky", "https://bit.ly/2IbDbsc"],
     text:"Designed by John Galen Howard in the Classical Revival Beaux-Arts style, it was completed in 1910. Atop the gate are eight panels of bas-relief figures: four nude men representing the disciplines of law, letters, medicine, and mining, and four nude women representing the disciplines of agriculture, architecture, art, and electricity."        
     },
@@ -56,13 +53,13 @@ var locations = [
     title: "<strong>Beta Theta Pi Chapter House</strong>",
     est: "Established: 1893",
     photos: ["https://bit.ly/2G6DfUj", "https://bit.ly/2KfNCaD"],
-    text:"Beta Theta Pi was the fifth Greek-letter fraternity to make an appearance at the University of California. Its Omega chapter was established in Berkeley in 1879, but it wasn’t until 1893 that the chapter constructed its home at 2607 Hearst Avenue (then College Way), across the road from the campus, in the newly subdivided Daley’s Scenic Park tract."        
+    text: "Beta Theta Pi was the fifth Greek-letter fraternity to make an appearance at the University of California. Its Omega chapter was established in Berkeley in 1879, but it wasn’t until 1893 that the chapter constructed its home at 2607 Hearst Avenue (then College Way), across the road from the campus, in the newly subdivided Daley’s Scenic Park tract."        
     },{
     name: "bennington",
     lat: 37.8758522,
     long: -122.259827,
     title: "<strong>Bennington Apartments</strong>",
-    est: "Established: 1910",
+    est: "Established: 1893",
     photos: ["https://bit.ly/2G9elTJ", "https://bit.ly/2wyZYIY"],
     text: "Around 1910, the Henrys formed W.W. Henry Investment Company and began buying properties along the avenue. They moved into 1805 Euclid but sometime after 1911, the creek behind the two houses was culverted, and in 1915 the houses were moved to the back and attached back-to-back to form a six-unit apartment building."        
     },{
@@ -88,7 +85,7 @@ var locations = [
     lat: 37.8771081,
     long: -122.258276,
     title: "<strong>Weltevreden</strong>",
-    est: "Established: 1896",
+    est: "Established: TBA",
     photos: ["https://bit.ly/2wACQK3", "https://bit.ly/2G8S4FR"],
     text: "Built in 1896, it attracted much attention. In the Sunset magazine article Berkeley, the Beautiful (December 1906), writer Herman Whitaker described Weltevreden as “most beautiful of all” and the “premier residence of Berkeley.”"
     
@@ -96,8 +93,8 @@ var locations = [
     name: "bentley",
     lat: 37.877626, 
     long: -122.257435,
-    title: "<strong></strong>",
-    est: "Established: 1900",
+    title: "<strong>Bentley House</strong>",
+    est: "Established: 1896",
     photos: ["https://bit.ly/2G8gFuh", "https://bit.ly/2IdKyv2"],
     text: "Built in 1900. Despite its simplicity, the house possesses several strong design features, including an overhanging gambrel roof open to extended eaves; a prominent front porch with a shed roof supported by open brackets; a three-sided window bay above the front porch; and numerous windows on all sides, often arranged in groups of three."
     
@@ -252,7 +249,7 @@ var locations = [
     lat:  37.8686208,
     long: -122.295913,
     title: "<strong>Suendermann Plumbing Co.</strong>",
-    est: "Late 1870 to Early 1880s (estimate)",
+    est: "Established: Late 1870 to Early 1880s (estimate)",
     photos: ["https://bit.ly/2rD3E7y", "https://bit.ly/2KUQxXv"],
     text:"Only three 19th century commercial buildings are still standing on busy University Avenue. 844 and 982 University Avenue are physically intact examples of what was, in the 1880s, a common commercial style. Tall display windows for lighting the interior of the business reflected a technical advance of pane-glass making in the mid-nineteenth century. Surrounding these large windows were carved wood moldings and brackets typical of the Victorian era."
     
@@ -315,9 +312,8 @@ var locations = [
     lat:  37.8676588,
     long: -122.299885,
     title: "<strong>Shellmound</strong>",
-    est: "Established: 1924", 
     photos: ["https://bit.ly/2KeAR00", "https://bit.ly/2rD3E7y"],
-    text:"The Berkeley Shellmound is the earliest inhabited location in the Bay Area. Archaeologists have recovered large numbers of tools and ornaments from the mound, and 95 human burials. Most of the artifacts are stored in the catacombs of U.C. The above-ground part shellmound was leveled and paved over. But much of the below-ground part remains intact today, extending up to twenty feet down in some parts, under parking lots, streets, railroad tracks, and buildings."
+    text:"The Berkeley Shellmound is the earliest inhabited location in the Bay Area. Archaeologists have recovered large numbers of tools and ornaments from the mound, and 95 human burials. The above-ground part shellmound was leveled and paved over. But much of the below-ground part remains intact today, extending up to twenty feet down in some parts, under parking lots, streets, railroad tracks, and buildings."
     
     },{
     name: "incin",
@@ -326,93 +322,44 @@ var locations = [
     title: "<strong>Municipal Incinerator</strong>",
     est: "Established: 1909",
     photos: ["https://bit.ly/2KhyE3X", "https://bit.ly/2KSmiQS"], 
-    text:"A municipal incinerator was considered the best “modern” method of disposing of garbage. In 1909 one was constructed but after one trial burn it was discovered that did not operate properly, and it was shut down. In 1914, a new incinerator was constructed. The building is unusual because of its ornamental use of concrete and curved Mission Revival–style roof line. It is a distinctive industrial structure, without windows, and marks the location of the city’s northwest boundary."
+    text:"A municipal incinerator was considered the best “modern” method of disposing of garbage. The building is unusual because of its ornamental use of concrete and curved Mission Revival–style roof line. It is a distinctive industrial structure, without windows, and marks the location of the city’s northwest boundary."
     
     }
 ];
+// Loops through the location array to access data already compiled from the location pins.
+for (var i=0; i< locations.length; i++) {
 
-  
+// generates an picture from the olden times
+
+
+        var landMarkBlock = `
+        <div class="row pt-3">
+            <div class="col-md-3">
+                <div class="card panel-default">
+                        <img class="pr-2" width="260px" src="${locations[i].photos[0]}">
+                </div>
+            </div>    
+            <div class="col-md-3">
+                <div class="card panel-default">
+                        <img class="pr-2" width="260px" src="${locations[i].photos[1]}">
+                </div>
+            </div>    
+
+            <div class="col-md-6">
+                <div class="card panel-default">
+                <h5 id="${locations[i].name}" class="card-title">${locations[i].title}</h5>
+                <p class="card-text">${locations[i].est}</p>
+                <p class="card-text">${locations[i].text}</p>
+                </div>
+            </div>
+        </div>
+        `;
 
  
- 
-var mapCanvas, infoWindow;
-var userLat, userLng;
-var userLoc = {
-    lat: userLat,
-    lng: userLng
-}
+        $("#landmark-block").append(landMarkBlock);
+ }
 
-
-
-
-
-
-
-function initMap() {
-    
-    mapCanvas = new google.maps.Map(document.getElementById('map'), {
-            zoom: 14,
-            panControl: false,
-            scrollwheel: false,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            center: {lat: locations[0].lat, lng: locations[0].long}
-    });          
-    infoWindow = new google.maps.InfoWindow;
-
-
-    // Adding all landmark markers & attached infowindows
-    for (var i = 0; i < locations.length; i++) {  
-        var markerImage = 'assets/images/marker_sm.png';
-        var contentString = '<img style="height:60px; padding-right:2px" src=' + locations[i].photos[0] + '>' + '<img height="60px"src=' + locations[i].photos[1] + '>' + "<br />" + locations[i].title + "<br />" + locations[i].est;
-        var infowindow = new google.maps.InfoWindow({content: contentString, maxWidth: 400});
-        var marker = new google.maps.Marker({
-            position: {lat: locations[i].lat, lng: locations[i].long},
-            icon: markerImage,
-            map: mapCanvas,
-            text: infowindow,
-            // test: listen
-        });
-        
-        (function(infowindow2, marker2) {
-            marker2.addListener('click', function () {
-            infowindow2.open(mapCanvas, marker2);
-            });
-        }) (infowindow, marker);        
-    }
-
-    // Getting user location
-    $.getJSON('https://ipapi.co/8.8.8.8/json/', function(data){
-        userLat = data.latitude;
-        userLng = data.longitude;
-        console.log(data.latitude);
-        console.log(data.longitude);
-    });
-
-
-    // Adding marker at user location
-    var userImg = 'assets/images/user-location.png';
-    var userMarker = new google.maps.Marker({
-        icon: userImg,
-        position: userLoc,
-        map: mapCanvas
-
-    }); 
-
-    mapCanvas.setCenter(userLoc);
-    mapCanvas.setZoom(15);
-    
-}
-
-
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(browserHasGeolocation ?
-                        'Error: The Geolocation service failed.' :
-                        'Error: Your browser doesn\'t support geolocation.');
-  infoWindow.open(map);
-}
-
-document.getElementById( "home" ).onclick = function() {
+ document.getElementById( "home" ).onclick = function() {
     location.href = "index.html";
 };
 
@@ -428,30 +375,3 @@ document.getElementById( "tour" ).onclick = function() {
 document.getElementById( "contact" ).onclick = function() {
     location.href = "index.html";
 };
-
-
-                
-
-
-
-
-
-
-        var image1 = locations[3].photos[0];
-        var image2 = $("#photo2");
-
-        $("#title1").html(locations[0].title);
-        $("#est1").html(locations[0].est);
-        $("#photo1").attr("src=", locations[3].photos[0]);
-
-        $("#title2").html(locations[2].title);
-        $("#est2").html(locations[2].est);
-        image2.append(locations[3].photos[0]);
-
-        console.log(locations[3].name);
-        console.log(locations[3].photos[0]);
-    
-
-        initMap();
-
-      
