@@ -357,17 +357,6 @@ var locations = [
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
-    // var waypts = [];
-    // console.log(waypts)
-  
-    // for(var i = 0; i < checkedOptions.length; i++) {
-    //     waypts.push({
-    //         location: checkedOptions[i].value,
-    //         stopover: true
-    //     });
- 
-    // }
-
     
     var waypts = [];
     var checkboxArray = document.getElementById('waypoints');
@@ -379,10 +368,6 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         });
       }
     }
-
-
-
-   
     directionsService.route({
         origin: {lat: startLat, lng: startLong},
         destination: {lat: endLat, lng: endLong},
@@ -399,10 +384,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
             window.alert('Directions request failed due to ' + status);
             console.log("there's no route between these two locations. Please think about how little freetime the computer has before you request something stupid like this again")
         }
-        // console.log(startLat);
-        // console.log(startLong);
     });
-    
 }
 
 
@@ -454,43 +436,6 @@ function initMap() {
         $("#est2").html(locations[2].est);
         image2.append(locations[3].photos[0]);
 
-        // console.log(locations[3].name);
-        // console.log(locations[3].photos[0]);
 
-        
-var checkedOptions = [];
-var val;
-
-$( 'li' ).on( 'click', function( event ) {
- console.log(this);
- val = $(this).text();
- console.log(val);
- checkedOptions.push(val);
- console.log(checkedOptions);
-
-});
-
-
-
-//    var $target = $( event.currentTarget ),
-//        val = $target.attr( 'data-value' ),
-//        $inp = $target.find( 'input' ),
-//        idx;
-//        console.log(val)
-
-//    if ( ( idx = checkedOptions.indexOf( val ) ) > -1 ) {
-//       checkedOptions.splice( idx, 1 );
-//       setTimeout( function() { $inp.prop( 'checked', false ) }, 0);
-//    } else {
-//       checkedOptions.push( val );
-//       setTimeout( function() { $inp.prop( 'checked', true ) }, 0);
-//       console.log(checkedOptions[0])
-//    }
-
-//    $( event.target ).blur();
-      
-   
-//    return false;
-// });
 
       
