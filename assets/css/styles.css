@@ -7,7 +7,6 @@ body {
   width: 100%; height: 400px; margin-top: 40px; margin-bottom: 40px;
 }
 
-<<<<<<< HEAD
 .gm-style img .infobox { 
   max-width: none; 
   height: 60px;
@@ -17,15 +16,12 @@ body {
 
 img .infobox {
   height: 60px;
-=======
-img .infobox {
- height: 60px; 
->>>>>>> 58efc2d97c8fa4e4053fc584556302458c8ac645
 }
 
 .info-window {
   font-family: 'Montserrat', sans-serif;
 }
+
 .info-content {
   color: #999;
 }
@@ -48,4 +44,8 @@ img .infobox {
 
 .portfolio-item {
   margin-bottom: 30px;
+}
+
+.submit {
+  margin: 0 auto;
 }
