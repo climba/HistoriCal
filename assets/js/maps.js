@@ -337,17 +337,6 @@ var locations = [
  
 var mapCanvas, infoWindow;
 
-var userLat, userLng;
-var userLoc = {
-    lat: userLat,
-    lng: userLng
-}
-
-
-
-
-
-
 
 
 function initMap() {
