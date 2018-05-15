@@ -67,9 +67,11 @@
                       Start Location
                     </button>
                     <div id="start-location" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        
                         <a class="dropdown-item" href="#">Springer Gateway</a>
                         <a class="dropdown-item" href="#">Springer Memorial Gateway</a>
                         <a class="dropdown-item" href="#">Berkeley Center</a>
+                        <a class="dropdown-item" href="#">My Location</a>
                         <a class="dropdown-item" href="#">Founder Rock</a>
                         <a class="dropdown-item" href="#">Greek Theater</a>
                         <a class="dropdown-item" href="#">Sather Gate</a>
@@ -229,21 +231,25 @@
         </div>  <!-- End container div -->
        
 
-      
-          </div>
-              <!-- /.row -->
-        <!-- End Top Panel -->             
-              <!-- Start Bottom Panel -->
-              <div class="row mb-4">
-                  <div class="col-lg-12">
-                      <div id="map"></div>       
-                    </div>
-                  </div>
-              <!-- End Bottom Panel -->
-      <!--End Page Content -->
-      
-      <!--End container -->
-          </div>
+  
+      </div>
+      <!-- Map div -->
+      <div class="row mb-4">
+        <div class="col-lg-12">
+          <div id="map"></div>       
+        </div>
+      <!-- Route Info Div -->
+        <div class="col-lg-12 route-info">
+          <div class="container info-container">
+            <div class="text-center" id="route-dist"></div>
+            <div class="text-center" id="route-time"></div>   
+          </div>   
+        </div>
+      </div>
+
+
+    </div>
+
       <!-- Footer -->
       
       <br>

@@ -50,6 +50,7 @@ img .infobox {
   margin-bottom: 30px;
 }
 
-.submit {
+.route-time,
+.route-dist {
   margin: 0 auto;
 }

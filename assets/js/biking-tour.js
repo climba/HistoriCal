@@ -327,28 +327,20 @@ var locations = [
     var startLong;
     var endLat;
     var endLong;
-    var userLat;
-    var userLng;
 
    $("#start-location a").on('click', function(){
        console.log(this)
        startLocation = $(this).text();
-       if(startLocation === "My Location") {
-            console.log("okaaay")
-            startLat = userLat;
-            startLong = userLng;
+       for(var i =0; i < locations.length; i++) {
+        if(locations[i].title === startLocation) {
+            startLat = locations[i].lat;
+            startLong = locations[i].long;    
             initMap();
         }
-       for(var i =0; i < locations.length; i++) {
-            if(locations[i].title === startLocation) {
-                startLat = locations[i].lat;
-                startLong = locations[i].long;    
-                initMap();
-            }
-        }
+
+    }
+       
    })
-
-
    $("#end-location a").on('click', function(){
     console.log(this)
     endLocation = $(this).text();
@@ -379,45 +371,21 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     directionsService.route({
         origin: {lat: startLat, lng: startLong},
         destination: {lat: endLat, lng: endLong},
-        travelMode: 'WALKING',
-        waypoints: waypts, //
-        optimizeWaypoints: true //
+        travelMode: 'BICYCLING',
+        waypoints: waypts, 
+        optimizeWaypoints: true 
     }, function(response, status) {
         if (status === 'OK') {
             directionsDisplay.setDirections(response);
             $("#route-dist").text( "Distance: " + (response.routes[0].legs[0].distance.text)).css("font-weight", "Bold");
             $("#route-time").text( "Duration: " + response.routes[0].legs[0].duration.text).css("font-weight", "Bold");
-            var route = response.routes[0]; //
+            var route = response.routes[0];
         } else {
             window.alert('Directions request failed due to ' + status);
             console.log("there's no route between these two locations. Please think about how little freetime the computer has before you request something stupid like this again")
         }
     });
 }
-
-
-
-
-// Getting user location
-$.getJSON('https://ipapi.co/8.8.8.8/json/', function(data){
-    userLat = data.latitude;
-    userLng = data.longitude;
-    console.log(userLat);
-    console.log(userLng);
-});
-
-
-// Adding marker at user location
-var userImg = 'assets/images/user-location.png';
-var userMarker = new google.maps.Marker({
-    icon: userImg,
-    position: userLoc,
-    map: mapCanvas
-
-}); 
-
-// mapCanvas.setCenter(userLoc);
-// mapCanvas.setZoom(15);
 
 
 function initMap() {

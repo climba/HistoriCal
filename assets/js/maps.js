@@ -336,11 +336,6 @@ var locations = [
  
  
 var mapCanvas, infoWindow;
-var userLat, userLng;
-var userLoc = {
-    lat: userLat,
-    lng: userLng
-}
 
 
 
@@ -380,26 +375,7 @@ function initMap() {
         }) (infowindow, marker);        
     }
 
-    // Getting user location
-    $.getJSON('https://ipapi.co/8.8.8.8/json/', function(data){
-        userLat = data.latitude;
-        userLng = data.longitude;
-        console.log(data.latitude);
-        console.log(data.longitude);
-    });
 
-
-    // Adding marker at user location
-    var userImg = 'assets/images/user-location.png';
-    var userMarker = new google.maps.Marker({
-        icon: userImg,
-        position: userLoc,
-        map: mapCanvas
-
-    }); 
-
-    mapCanvas.setCenter(userLoc);
-    mapCanvas.setZoom(15);
     
 }
 
