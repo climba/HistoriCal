@@ -1,7 +1,8 @@
 # [Welcome to HistoriCal](https://climba.github.io/HistoriCal/)
 
+[HistoriCal](https://climba.github.io/HistoriCal/) is a fun and interactive way to tour the historical landmard of the Berkeley Area! 
 
-[HistoriCal](https://climba.github.io/HistoriCal/) is a fun and interactive way to tour the historical landmard of the Berkeley Area! HistoriCAL [Utilizes Bootstrap4](http://getbootstrap.com/).
+HistoriCAL [Utilizes Bootstrap4](http://getbootstrap.com/).
 
 ## Preview
 
@@ -12,9 +13,6 @@
 ## About HistoriCAL
 
 HistoriCAL is a web app that provides information and context surrounding historical landmarks in the greater Berkeley area. Using Google Maps the app generates a walking route to the various landmarks in Berkeley. For each landmark, we provide the official name, the date the landmark was established, and both old and modern pictures. In addition to creating a tour based on a landmark you choose, we also provide a currated, preset trails based around Northside and West Berkeley. 
-
-[HistoriCal](https://climba.github.io/HistoriCal/) is a fun and interactive way to tour the historical landmard of the Berkeley Area! HistoriCAL [Utilizes Bootstrap4](http://getbootstrap.com/). And was created by [Sophie Obayashi](https://github.com/skobayash/), [Perry Lin](https://github.com/prry93/), [Dayan Thorne](https://github.com/dayansfo/) and [Mike White](https://github.com/climba/) .
-
 
 ## Technology Used
 - HTML 5
@@ -32,10 +30,10 @@ HistoriCAL's mission is to give users a greater understanding of the rich histor
 
 ## Contributors
 
-[Sophie Obayashi](https://github.com/skobayash/)
-[Perry Lin](https://github.com/prry93/)
-[Dayan Thorne](https://github.com/dayansfo/)
-[Mike White](https://github.com/climba/) 
+- [Sophie Obayashi](https://github.com/skobayash/)
+- [Perry Lin](https://github.com/prry93/)
+- [Dayan Thorne](https://github.com/dayansfo/)
+- [Mike White](https://github.com/climba/) 
 
 
 

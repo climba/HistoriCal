@@ -321,8 +321,10 @@ var locations = [
     }
 ];
 
+
 var mapCanvas;
 var infowindow;
+
 
 function initMap2() {
     
