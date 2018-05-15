@@ -2,7 +2,7 @@
 var locations = [
     // Berkeley Center
     {
-    name: "Springer Gateway",
+    name: "SpringerGateway",
     lat: 37.871754,
     long: -122.265188,
     title: "<strong>Springer Memorial Gateway</strong>",
@@ -10,7 +10,7 @@ var locations = [
     photos: ["assets/images/springer2.jpg", "assets/images/springer3.jpg"],
     text: "The Springer Memorial Gateway was designed by landscape architect Thomas D. Church and constructed in 1964. It is a brick and concrete plaza at the head of the crescent of UC Berkeley and is linked to the Addison entrance. Manufacturer Russell Severance Springer (Class of 1902) bequeathed funds for the plaza in 1953."
     },{
-    name: "Berkeley Center",
+    name: "BerkeleyCenter",
     lat: 37.8715926,
     long: -122.272747,
     title: "<strong>Berkeley Center</strong>",
